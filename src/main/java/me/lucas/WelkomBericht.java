@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import java.awt.*;
 
 public class WelkomBericht extends ListenerAdapter {
-	@Override
+	@Override //Elke keer als iemand de server joint word er een bericht gestuurd.
 	public void onGuildMemberJoin(GuildMemberJoinEvent e) {e.getGuild().getTextChannelById(959426161899888732L).sendMessageEmbeds(welkom(e.getMember())).queue();}
 	private MessageEmbed welkom(Member member) {
 		EmbedBuilder eb = new EmbedBuilder();

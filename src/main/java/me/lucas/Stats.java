@@ -12,9 +12,9 @@ public class Stats {
 		ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 		Runnable task = () -> {
 			for(Guild guild : jda.getGuilds()) {
+				//Dit veranderd de naam van de channel naar 'Leden aantal: #'
 				guild.getVoiceChannelById(959430575465304104L).getManager().setName("Leden aantal: " + guild.getMembers().size()).queue();
-
 			}
-		}; executorService.scheduleWithFixedDelay(task, 0, 1, TimeUnit.MINUTES);
+		}; executorService.scheduleWithFixedDelay(task, 0, 1, TimeUnit.MINUTES); //Het word elke 1 minuut uitgevoerd.
 	}
 }

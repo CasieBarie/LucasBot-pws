@@ -23,6 +23,7 @@ public class Main {
 		KopOfMunt kopOfMunt = new KopOfMunt();
 		SteenPapierSchaar steenPapierSchaar = new SteenPapierSchaar();
 		WelkomBericht welkomBericht = new WelkomBericht();
+		VerbodenWoorden verbodenWoorden = new VerbodenWoorden();
 		BerichtenKijker listener = new BerichtenKijker(koekje, getalOnder10, kopOfMunt, steenPapierSchaar);
 		try {
 			//Hiermee wordt de bot gemaakt en ingelogt met de token.
@@ -30,7 +31,7 @@ public class Main {
 				.setChunkingFilter(ChunkingFilter.ALL)
 				.setMemberCachePolicy(MemberCachePolicy.ALL)
 				.enableIntents(GatewayIntent.GUILD_MEMBERS)
-				.addEventListeners(listener, getalOnder10, steenPapierSchaar, welkomBericht)
+				.addEventListeners(listener, getalOnder10, steenPapierSchaar, welkomBericht, verbodenWoorden)
 				.setActivity(Activity.watching("code!"))
 				.build();
 			jda.awaitReady();
